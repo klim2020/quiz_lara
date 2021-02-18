@@ -2,7 +2,7 @@
 
 namespace App\Facades;
 use Illuminate\Support\Facades\Facade;
-use Faker\Factory;
+use Faker;
 
 class FakerFacade extends Facade
 {

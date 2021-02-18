@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Faker;
 use Illuminate\Support\ServiceProvider;
 
 class FakerServiceProvider extends ServiceProvider
@@ -13,7 +13,9 @@ class FakerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('faker', function ($app) {
+            return Faker\Factory::create();
+        }); //
     }
 
     /**
