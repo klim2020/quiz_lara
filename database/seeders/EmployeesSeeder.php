@@ -19,11 +19,16 @@ class EmployeesSeeder extends Seeder
         for ($i=1;$i<1000;$i++){
             $type = rand(1,2);
             $val = ($type == 1)?rand(1,10):rand(10,30)*100;
+            $date = Faker::date();
             DB::table('employees')->insert([
                 'name'=>Faker::name(),
+                'email'=>Faker::email(),
                 'paytype'=>$type,
                 'value'=>$val,
-                'department_id'=> rand(1,19)
+                'department_id'=> rand(1,19),
+                'created_at'=>$date,
+                'updated_at'=>$date
+
             ]);
 
         }

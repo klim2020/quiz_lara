@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/articles', [App\Http\Controllers\ArticleController::class, 'list'])->name('articles');
+
+Route::get('/xml', [App\Http\Controllers\XMLImportController::class,'getxml'])->name('xml.get');
+
+Route::post('/xml', [App\Http\Controllers\XMLImportController::class,'loadxml'])->name('xml.load');
