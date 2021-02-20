@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Providers;
-use Faker;
-use Illuminate\Support\ServiceProvider;
 
-class FakerServiceProvider extends ServiceProvider
+use Illuminate\Support\ServiceProvider;
+use App\Library\Xmlparser;
+
+class XMLServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,9 +14,9 @@ class FakerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('faker', function ($app) {
-            return  Faker\Factory::create('fr_FR');
-        }); //
+        $this->app->singleton(XMLparser::class,function ($app){
+            return new XMLparser();
+        });
     }
 
     /**

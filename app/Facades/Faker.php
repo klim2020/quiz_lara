@@ -2,12 +2,12 @@
 
 namespace App\Facades;
 use Illuminate\Support\Facades\Facade;
-use Faker;
 
-class FakerFacade extends Facade
+
+class Faker extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return Faker\Generator::class;
+        return 'faker';
     }
 }

@@ -17,6 +17,9 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table ->string('name');
             $table->string('email');
+            $table->date('birthdate');
+            $table->string('position');
+
             $table->integer('paytype');
             $table->decimal('value');
             $table->bigInteger('department_id')->unsigned()->index();
